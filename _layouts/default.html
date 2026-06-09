@@ -12,5 +12,12 @@
 <body>
   {% include navigation.html %}
   <main>{{ content }}</main>
+  <script>
+    document.querySelector('.sidebar-toggle')?.addEventListener('click', function() {
+      if (window.innerWidth <= 700) {
+        this.parentElement.classList.toggle('open');
+      }
+    });
+  </script>
 </body>
 </html>

@@ -161,10 +161,46 @@ main {
 
   .sidebar-links > li {
     margin-bottom: 0;
+    position: static;
   }
 
   .sidebar-sublinks {
     display: none;
+  }
+
+  .has-sub.open .sidebar-sublinks {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 8px 20px;
+    z-index: 99;
+    list-style: none;
+  }
+
+  .has-sub.open .sidebar-sublinks li {
+    margin-bottom: 0;
+  }
+
+  .has-sub.open .sidebar-sublinks a {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .has-sub.open .sidebar-sublinks li:last-child a {
+    border-bottom: none;
+  }
+
+  .sidebar-toggle {
+    cursor: pointer;
   }
 
   .sidebar-footer {

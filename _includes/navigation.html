@@ -4,7 +4,7 @@
     <ul class="sidebar-links">
       <li><a href="/index.html">Home</a></li>
       <li class="has-sub">
-        <span>Paintings</span>
+        <span class="sidebar-toggle">Paintings</span>
         <ul class="sidebar-sublinks">
           {% for item in site.data.paintings %}
           <li><a href="{{ item.link }}">{{ item.name }}</a></li>

@@ -37,6 +37,81 @@
   display: block;
 }
 
+.painting-grid--index {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.painting-grid-item {
+  display: block;
+  line-height: 0;
+}
+
+.painting-grid-item img {
+  transition: opacity 0.3s ease;
+}
+
+.painting-grid-item:hover img {
+  opacity: 0.85;
+}
+
+.painting-grid-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 12px;
+  line-height: 1;
+  color: #888;
+}
+
+@media (max-width: 800px) {
+  .painting-grid--index {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .painting-grid--index {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 100%;
+  }
+
+  .painting-grid--index .painting-grid-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    line-height: 1;
+    border-bottom: 1px solid #eee;
+  }
+
+  .painting-grid--index .painting-grid-item:last-child {
+    border-bottom: none;
+  }
+
+  .painting-grid--index .painting-grid-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .painting-grid--index .painting-grid-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-top: 0;
+    color: #333;
+  }
+
+  .painting-grid--index .painting-grid-item::after {
+    content: "→";
+    margin-left: auto;
+    font-size: 16px;
+    color: #ccc;
+  }
+}
+
 @media (max-width: 900px) {
   .painting-grid {
     grid-template-columns: repeat(3, 1fr);
