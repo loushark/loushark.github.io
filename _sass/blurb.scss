@@ -1,12 +1,19 @@
 .blurb {
-  color: grey;
-  width: 50vw;
+  max-width: 600px;
+  margin: 0 auto 32px;
   text-align: center;
-  margin: auto;
-  padding: 40px;
+}
+
+.blurb h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .blurb p {
-  font-size: 12px;
-  text-align: justify;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
 }

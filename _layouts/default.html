@@ -1,24 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% feed_meta %}
-    {% seo %}
-    {% include titleheader.html %}
-    {% include footer.html %}
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-      </style>
-  </head>
-  <body>
-    {% include navigation.html %}
-    <div class="content">
-      {{ content }}
-    </div>
-  </body>
-  <!-- <footer>
-    {% include footer.html %}
-  </footer> -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap");
+  </style>
+</head>
+<body>
+  {% include navigation.html %}
+  <main>{{ content }}</main>
+</body>
 </html>

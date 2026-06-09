@@ -1,20 +1,74 @@
-.paintings-navbar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 85vh;
-  height: 55vh;
-  padding: 10vh;
-  margin: 0;
+.paintings-body {
+  padding: 48px;
 }
 
-.paintings-navbar a {
-  font-size: 30px;
-  text-decoration: none;
-  color: pink;
+.paintings-body h2 {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
-.paintings-navbar a:hover {
-  color: #70dbdb;
+.painting-footer {
+  border-top: 1px solid #eee;
+  padding-top: 24px;
+  margin-top: 48px;
+  max-width: 600px;
+}
+
+.painting-footer p {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.painting-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.painting-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .painting-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .paintings-body {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .paintings-body h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .painting-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .paintings-body {
+    padding: 24px 16px;
+  }
+
+  .painting-footer {
+    margin-top: 32px;
+    padding-top: 16px;
+  }
+
+  .painting-footer p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
 }

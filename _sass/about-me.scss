@@ -1,72 +1,83 @@
-.about-me {
-  margin-top: 5em;
-  // max-width: 30vw;
+.about-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 80px 20px 40px;
 }
 
-.about-me p {
-  margin: 4px;
-}
-
-
-.insta-link {
-  color: black;
-  
-}
-
-.about-me h3 {
-  color: #70dbdb;
-  padding-left: 4px;
-}
-.about-me h4 {
-  // color: #70dbdb;
-  font-weight:bolder;
-  padding-bottom: 0; 
-  margin-bottom: 0;
-  padding-left: 4px;
-}
-
-.about-me img {
-  max-width: 20vw;
-  // margin-top: 10px;
-}
-
-.hello {
+.about-header {
   display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-  // flex-wrap: wrap;
-  max-width: 60vw;
-  margin-bottom: 20px;
-  padding: 50px;
-  border-bottom: solid #6fd5d576 1px;
-  border-top: solid #6fd5d576 1px;
-  
-  
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 48px;
 }
 
-.blah {
-  max-width: 30vw;
-  font-size: 1.8vh;
-  margin-right: 40px;
-  text-align: center;
+.about-header .about-text {
+  flex: 1;
 }
 
-.exhibitions {
-  justify-content:left;
-  max-width: 90vw;
-  font-size: 1.8vh;
-  border-bottom: solid #6fd5d576 1px;
-  // border-top: solid #70dbdb 1px;
-  padding: 50px;
+.about-header .about-text h1 {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
-.awards {
-  justify-content:left;
-  max-width: 90vw;
-  font-size: 1.8vh;
-  border-bottom: solid #6fd5d576 1px;
-  // border-top: solid #70dbdb 1px;
-  padding: 50px;
-  margin-bottom: 90px;
+.about-header .about-text p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.about-header .about-photo {
+  flex-shrink: 0;
+  width: 180px;
+}
+
+.about-header .about-photo img {
+  width: 100%;
+  height: auto;
+}
+
+.about-section {
+  border-top: 1px solid #eee;
+  padding-top: 32px;
+  margin-bottom: 32px;
+}
+
+.about-section h2 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.about-section h3 {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.about-section p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 600px) {
+  .about-header {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .about-header .about-photo {
+    width: 120px;
+  }
+  .about-page {
+    padding: 70px 16px 30px;
+  }
 }

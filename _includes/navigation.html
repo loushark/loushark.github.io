@@ -1,7 +1,21 @@
-<nav class="navbar">
-  {% for item in site.data.navigation %}
-  <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
-    {{ item.name }}
-  </a>
-  {% endfor %}
+<nav class="sidebar">
+  <div class="sidebar-inner">
+    <div class="sidebar-logo">Lou Reade Art</div>
+    <ul class="sidebar-links">
+      <li><a href="/index.html">Home</a></li>
+      <li class="has-sub">
+        <span>Paintings</span>
+        <ul class="sidebar-sublinks">
+          {% for item in site.data.paintings %}
+          <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <a href="https://www.instagram.com/loureadeart" target="_blank">Instagram</a>
+      <p>&copy; 2026 Lou Reade Art</p>
+    </div>
+  </div>
 </nav>

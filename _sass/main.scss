@@ -1,104 +1,178 @@
 * {
-  font-family: 'Open Sans', sans-serif;
-  color: grey;;
-}
-
-// lou reade art title
-
-.titleheader {
-  display: flex;
-  position: fixed;
-  z-index: 2; 
-  width: 200px;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  border-right: 1px solid #E8E8E8;
-  overflow-x: hidden;
-}
-
-.titleheader p {
-  // height: 100%;
+  margin: 0;
   padding: 0;
-  font-size: 12px;
-  letter-spacing: 2px;
+  box-sizing: border-box;
 }
-
-//navigation links
-
-.navbar {
-  position: fixed; 
-  z-index: 1; 
-  height: 50px;
-  width: 100%;
-  text-align: center;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-  border-bottom: 1px solid #E8E8E8;
-}
-
-.navbar a {
-  padding: 0px 8px 0px 8px;
-  text-decoration: none;
-  font-size: 16px;
-  color: grey;
-  left: 0;
-}
-
-.navbar a:hover {
-  color: #70dbdb;
-}
-
-.current {
-  color: #70dbdb;
-}
-
-//content
 
 body {
-  min-height: 100%;
-  margin: auto auto;
-}
-
-.content {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  color: #000;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 50px;
 }
 
-.home-image-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.home-image-div img {
-  width: 55vh;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.home-image-1 {
-  // width: 55vh;
-  padding-top: 10vh;
-}
-
-.nav-links {
-  display: flex;
+/* Sidebar */
+.sidebar {
   position: fixed;
-  right: 0;
-  z-index: 2; 
-  width: 50px;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  border-right: 1px solid #E8E8E8;
-  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  border-right: 1px solid #eee;
+  background: #fff;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-img {
-  left: 0;
-  width: 20px;
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px 24px;
+}
+
+.sidebar-logo {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.sidebar-links {
+  list-style: none;
+  flex: 1;
+}
+
+.sidebar-links > li {
+  margin-bottom: 12px;
+}
+
+.sidebar-links > li > a,
+.sidebar-links > li > span {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sidebar-links > li > a:hover,
+.sidebar-links > li > span:hover {
+  opacity: 0.5;
+}
+
+.sidebar-sublinks {
+  list-style: none;
+  margin-top: 6px;
+  padding-left: 12px;
+}
+
+.sidebar-sublinks li {
+  margin-bottom: 3px;
+}
+
+.sidebar-sublinks a {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.sidebar-sublinks a:hover {
+  opacity: 1;
+}
+
+.sidebar-footer {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.sidebar-footer a {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.sidebar-footer a:hover {
+  opacity: 1;
+}
+
+.sidebar-footer p {
+  font-size: 10px;
+  color: #bbb;
+  letter-spacing: 1px;
+}
+
+/* Main content */
+main {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+}
+
+@media (max-width: 700px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .sidebar-inner {
+    flex-direction: row;
+    align-items: center;
+    padding: 16px 20px;
+    gap: 20px;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 0;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex: none;
+    gap: 16px;
+  }
+
+  .sidebar-links > li {
+    margin-bottom: 0;
+  }
+
+  .sidebar-sublinks {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
 }
