@@ -12,11 +12,79 @@
 <body>
   {% include navigation.html %}
   <main>{{ content }}</main>
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <div class="lightbox-container">
+      <div class="lightbox-image-area">
+        <button class="lightbox-arrow lightbox-arrow--prev" id="lightbox-prev">&#8249;</button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="">
+        <button class="lightbox-arrow lightbox-arrow--next" id="lightbox-next">&#8250;</button>
+      </div>
+      <div class="lightbox-footer">
+        <p class="lightbox-info" id="lightbox-info"></p>
+      </div>
+    </div>
+  </div>
   <script>
     document.querySelector('.sidebar-toggle')?.addEventListener('click', function() {
       if (window.innerWidth <= 700) {
         this.parentElement.classList.toggle('open');
       }
+    });
+
+    var lightboxLinks = document.querySelectorAll('.lightbox-link');
+    var lightboxIndex = -1;
+
+    function updateArrows() {
+      document.getElementById('lightbox-prev').classList.toggle('disabled', lightboxIndex <= 0);
+      document.getElementById('lightbox-next').classList.toggle('disabled', lightboxIndex >= lightboxLinks.length - 1);
+    }
+
+    function openLightbox(index) {
+      if (index < 0 || index >= lightboxLinks.length) return;
+      lightboxIndex = index;
+      var link = lightboxLinks[index];
+      var img = link.querySelector('img');
+      document.getElementById('lightbox-image').src = link.href;
+      document.getElementById('lightbox-info').textContent = img ? img.getAttribute('alt') : '';
+      document.getElementById('lightbox').classList.add('active');
+      updateArrows();
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('lightbox-image').src = '';
+    }
+
+    function prevLightbox() {
+      if (lightboxIndex > 0) openLightbox(lightboxIndex - 1);
+    }
+
+    function nextLightbox() {
+      if (lightboxIndex < lightboxLinks.length - 1) openLightbox(lightboxIndex + 1);
+    }
+
+    lightboxLinks.forEach(function(link, i) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openLightbox(i);
+      });
+    });
+
+    document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev')?.addEventListener('click', prevLightbox);
+    document.getElementById('lightbox-next')?.addEventListener('click', nextLightbox);
+
+    document.getElementById('lightbox')?.addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (document.getElementById('lightbox').classList.contains('active')) closeLightbox();
+      }
+      if (e.key === 'ArrowLeft') prevLightbox();
+      if (e.key === 'ArrowRight') nextLightbox();
     });
   </script>
 </body>
